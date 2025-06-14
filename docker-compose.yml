@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:15
+    container_name: juveliber_db
+    restart: always
+    environment:
+      POSTGRES_USER: juveliber_user
+      POSTGRES_PASSWORD: securepassword
+      POSTGRES_DB: juveliber_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
